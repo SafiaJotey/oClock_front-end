@@ -1,0 +1,12 @@
+.order{
+    color: #105652;
+    margin:50px 0;
+}
+.services.btn{
+    background-color: #105652;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 2% 20%;
+    border-radius: 40px;
+}

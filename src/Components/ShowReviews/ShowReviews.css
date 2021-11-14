@@ -1,0 +1,11 @@
+.review-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    background-color: #d3fbdf;
+    border:2px solid #105652;
+    border-radius: 30% 0 30% 0;
+
+}

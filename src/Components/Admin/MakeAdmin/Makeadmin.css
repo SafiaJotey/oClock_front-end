@@ -1,0 +1,19 @@
+.input-section{
+    width: 40%;
+    border-radius: 10px;
+    padding: 5px;
+    border:2px solid #105652;
+}
+.admin{
+    color:#105652;
+}
+
+.admin .btn{
+    background-color:  #105652;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 10px 34px;
+    border-radius: 40px;
+
+}

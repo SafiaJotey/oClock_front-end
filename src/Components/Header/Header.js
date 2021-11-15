@@ -26,6 +26,7 @@ const Header = () => {
         {user?.email?
         <div className="d-md-flex  align-items-center">
           <Nav.Link as={Link} to="/allServices">Products</Nav.Link>
+          <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
           {/* <Nav.Link as={Link} to="/myOrder">MyOrders</Nav.Link>
           <Nav.Link as={Link} to="/manageOrder">ManageOrders</Nav.Link>
           <Nav.Link as={Link} to="/addServices"> AddService</Nav.Link> */}

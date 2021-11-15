@@ -27,8 +27,8 @@ const ShowReviews = () => {
                   <h6>{service?.name}</h6>
                   
                   <p>{service?.Reviews}</p>
-                   <p className="text-warning text-bold">Ratings : {service?.Ratings}</p>
-                  
+                   <div className="rate"><span className="text-warning text-bold">Ratings : {service?.Ratings}</span><i class="fas fa-star"></i>
+                  </div>
                 </div>
               </div>
             ))}

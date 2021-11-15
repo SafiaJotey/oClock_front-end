@@ -17,8 +17,11 @@ import MyOrders from './Components/MyOrders/MyOrders';
 import ManageOrder from './Components/ManageOrders/ManageOrder';
 import AddProducts from './Components/AddProducts/AddProducts';
 import AddReviews from './Components/AddReviews/AddReviews';
-import Dashboard from './Pages/Dashboard/Dashboard';
+
 import Products from './Pages/Products/Products';
+import Payment from './Components/Payment/Payment';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import ManageProducts from './Components/ManageProducts/ManageProducts';
 
 
 
@@ -50,28 +53,42 @@ function App() {
             <AddProducts></AddProducts>
           </Route>
           <Route path="/allServices">
+           
+            <Header></Header>
             <Products></Products>
+            <Footer></Footer>
           </Route>
 
           <PrivateRoute path="/booking/:serviceId">
-           <Booking></Booking>
+          <Header></Header>
+          <Booking></Booking>
+            <Footer></Footer>
+           
           </PrivateRoute>
 
           <PrivateRoute path="/dashboard">
            <Dashboard></Dashboard>
           </PrivateRoute>
 
-          <Route exact path="/myOrder">
+          <Route path="/myOrder">
             <MyOrders></MyOrders>
           </Route>
-          <Route exact path="/manageOrder">
+          <Route path="/payment">
+            <Payment></Payment>
+          </Route>
+          <Route path="/manageOrder">
             <ManageOrder></ManageOrder>
+          </Route>
+          <Route path="/manageProduct">
+            <ManageProducts></ManageProducts>
           </Route>
           <Route path="/review">
           <AddReviews></AddReviews>
           </Route>
           <Route path="/login">
+            <Header></Header>
             <Login></Login>
+            <Footer></Footer>
           </Route>
 
           {/* <PrivateRoute path="/ServiceDetails/:id">

@@ -15,6 +15,7 @@ const useFirebase = () => {
     const [error, setError] = useState('');
     const [isLogin, setIsLogin] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const[admin,setAdmin]=useState(false)
 
     const auth = getAuth()
     const googleProvider = new GoogleAuthProvider();
@@ -53,10 +54,7 @@ const handleRegistration = e => {
         setError('password must be 6 characters long.')
         return;
     }
-    if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
-        setError('password must contain two uppercase.');
-        return;
-    }
+   
     // isLogin ? processLogin(email, password) : registerNewUser(email, password);
     if (isLogin) {
         processLogin(email, password);
@@ -86,9 +84,15 @@ const registerNewUser = (email, password) => {
             const user = result.user;
             console.log(user);
             setError('');
-            
+            setUser(user);
+            saveUser(email,name);
             setUserName();
-            alert("Registration succesful! Please log in to explore.")
+            alert("Registration succesful! Please log in to explore.");
+            updateProfile(auth.currentUser,{
+                displayName:name
+            }).then(()=>{
+
+            })
         })
         .catch(error => {
             setError(error.message);
@@ -124,7 +128,11 @@ const handleResetPassword = () => {
         return () => unsubscribed;
     }, []);
 
-
+useEffect(()=>{
+    fetch(`http://localhost:5000/${user.email}`)
+    .then(res=>res.json())
+    .then(data=>setAdmin(data.admin))
+},[user.email])
 
     const logout = () => {
         setIsLoading(true);
@@ -134,7 +142,19 @@ const handleResetPassword = () => {
             })
             .finally(() => setIsLoading(false));
     }
+    
 
+    const saveUser=(email,displayName)=>{
+               const user={email,displayName};
+               fetch('http://localhost:5000/users',{
+                   method: 'POST',
+                   headers:{
+                       'content-type': 'application/json'
+                   },
+                   body:JSON.stringify(user)
+               })
+               .then()
+    }
     return {
         user,
         error,
@@ -147,6 +167,7 @@ const handleResetPassword = () => {
         handleResetPassword,
         isLogin,
         isLoading,
+        admin,
         logout
     }
 }

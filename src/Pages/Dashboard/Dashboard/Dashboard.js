@@ -35,6 +35,7 @@ import useAuth from './../../../Components/Hooks/useAuth';
 import ManageOrder from './../../../Components/ManageOrders/ManageOrder';
 
 import ManageProducts from './../../../Components/ManageProducts/ManageProducts';
+import Home from './../../Home/Home';
 
 
 const drawerWidth = 240;
@@ -71,6 +72,7 @@ function Dashboard(props) {
 
       </Box>
       }
+     <Link to='/home'><Button variant="inherit">Go to Home page</Button></Link>
      <Button variant="inherit" onClick={logout}>Logout</Button>
      
       
@@ -167,6 +169,7 @@ function Dashboard(props) {
           <ManageOrder></ManageOrder>
           
         </Route>
+        
         
         <Route path={`${path}/manageProduct`}>
           <ManageProducts></ManageProducts>

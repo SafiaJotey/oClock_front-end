@@ -1,98 +1,73 @@
-import React from 'react';
-import { useLocation,useHistory } from 'react-router';
-// import { Link } from 'react-router-dom';
+import { Container, Typography, TextField, Button, CircularProgress, Alert } from '@mui/material';
+import React, { useState } from 'react';
+import { Grid } from '@mui/material';
+import login from '../../Images/login.png';
+import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../Components/Hooks/useAuth';
-import "./Login.css"
-import login from '../../Images/login.png'
+
 const Login = () => {
-    const { signInUsingGoogle, isLogin, error,  handleNameChange,
-      handleEmailChange,
-      handlePasswordChange,
-      toggleLogin,
-      handleRegistration,
-      
-     
-      isLoading} = useAuth();
-         const history=useHistory();
-       const location=useLocation();
-       const redirect_url=location.state?.from || "/home";
+    const [loginData, setLoginData] = useState({});
+    const { user, loginUser, signInWithGoogle, isLoading, authError } = useAuth();
 
-       const handleSignInUsingGoogle=()=>{
-           signInUsingGoogle()
-           .then(result => {
-            
-            console.log(result.user);
-               history.push(redirect_url);
-              
-            
+    const location = useLocation();
+    const history = useHistory();
 
-        })
-       };
+    const handleOnChange = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newLoginData = { ...loginData };
+        newLoginData[field] = value;
+        setLoginData(newLoginData);
+    }
+    const handleLoginSubmit = e => {
+        loginUser(loginData.email, loginData.password, location, history);
+        e.preventDefault();
+    }
 
-    
-
-
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(location, history)
+    }
     return (
+        <Container>
+            <Grid container spacing={2}>
+                <Grid item sx={{ mt: 8 }} xs={12} md={6}>
+                    <Typography variant="body1" gutterBottom style={{color:'#105652'}} >Login</Typography>
+                    <form onSubmit={handleLoginSubmit}>
+                        <TextField
+                            sx={{ width: '75%', m: 1 }}
+                            id="standard-basic"
+                            label="Your Email"
+                            name="email"
+                            onChange={handleOnChange}
+                            variant="standard" />
+                        <TextField
+                            sx={{ width: '75%', m: 1 }}
+                            id="standard-basic"
+                            label="Your Password"
+                            type="password"
+                            name="password"
+                            onChange={handleOnChange}
+                            variant="standard" />
 
-        <div className="login ">
-               <h3>Please 
-               {isLogin ? 'Login' : 'Register'}
-               </h3>
-
-               <form   onSubmit={handleRegistration }>
-
-                        <div className="col-md-12 d-flex justify-content-center ">   
-            
-                          <div className="cart">
-                            <div className="cart-details">
-                              <img src={login} alt="" />
-                            </div>
-                            {!isLogin && <div className="row mb-3">
-                                          
-                                          <div className="col-sm-10">
-                                              <input onBlur={handleNameChange} type="text" className="form-control" id="inputName" placeholder="Your Name" />
-                                          </div>
-                                      </div>}
-                                      <div className="row mb-3">
-                                          
-                                          <div className="col-sm-10">
-                                              <input onBlur={handleEmailChange} type="email" placeholder="Your Email" className="form-control" id="inputEmail3" required />
-                                          </div>
-                                      </div>
-                                      <div className="row mb-3">
-                                        
-                                          <div className="col-sm-10">
-                                              <input onBlur={handlePasswordChange} type="password"placeholder="Your PassWord" className="form-control" id="inputPassword3" required />
-                                          </div>
-                                      </div>
-                                      <div className="row mb-3">
-                                          <div className="col-sm-10 offset-sm-2">
-                                              <div className="form-check">
-                                                  <input onChange={toggleLogin} className="form-check-input" type="checkbox" id="gridCheck1" />
-                                                  <label className="form-check-label" htmlFor="gridCheck1">
-                                                      Already Registerd?
-                                                  </label>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div className="row mb-3 text-danger">{error}</div>
-                                      <button type="submit" className="btn btn-primary">
-                                          {isLogin ? 'Login' : 'Register'}
-                                      </button>
-                                      
-                            <div className="text-area">
-                            <button className="btn btn-warning mx-1" onClick={handleSignInUsingGoogle}> Google Sign In</button>
-                            </div>
-                          </div>
-                   </div>
-               </form>
-                
-        </div>
-        
-       
+                        <Button  style={{ background:'#105652'}}sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Login</Button>
+                        <NavLink 
+                            style={{ textDecoration: 'none' }}
+                            to="/register">
+                            <Button  style={{ color:'#105652'}}variant="text">New User? Please Register</Button>
+                        </NavLink>
+                        {isLoading && <CircularProgress />}
+                        {user?.email && <Alert severity="success">Login successfully!</Alert>}
+                        {authError && <Alert severity="error">{authError}</Alert>}
+                    </form>
+                    <p>------------------------</p>
+                    <Button  style={{ background:'#105652'}} onClick={handleGoogleSignIn} variant="contained">Google Sign In</Button>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    <img style={{ width: '100%' }} src={login} alt="" />
+                </Grid>
+            </Grid>
+        </Container>
     );
-
-    
 };
 
 export default Login;

@@ -18,8 +18,11 @@ const AddReviews = () => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((result) => console.log(result));
-    console.log(data);
+      .then((result) => {
+        console.log(result)
+        alert("Thanks for your review");
+      });
+    
   };
   return (
     <div>
@@ -31,7 +34,7 @@ const AddReviews = () => {
               <form onSubmit={handleSubmit(onSubmit)}>
                 <input
                   {...register("name")}
-                  placeholder="Name"
+                  defaultValue={user?.displayName}
                   className="p-2 m-2 w-100"
                 />
                 <br />

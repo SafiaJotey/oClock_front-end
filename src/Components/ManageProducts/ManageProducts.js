@@ -14,7 +14,7 @@ const ManageProducts= () => {
   const handleDelete = (id) => {
     const proceed=window.confirm("Are you Sure,you wan to delete?");
     if(proceed){
-      fetch(`http://localhost:5000/deleteOrder/${id}`, {
+      fetch(`http://localhost:5000/deleteProduct/${id}`, {
       method: "DELETE"
     })
       .then((res) => res.json())

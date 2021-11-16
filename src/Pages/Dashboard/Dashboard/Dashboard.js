@@ -56,9 +56,13 @@ function Dashboard(props) {
       
       <Divider />
       <div><Link to={`${url}`}><Button variant="inherit">Dashboard</Button></Link></div>
-      <div><Link to={`${url}/myOrder`}><Button variant="inherit">MyOrder</Button></Link></div>
+     {!admin &&
+     <Box>
+        <div><Link to={`${url}/myOrder`}><Button variant="inherit">MyOrder</Button></Link></div>
      <div> <Link to={`${url}/payment`}><Button variant="inherit">Payment</Button></Link></div>
       <div><Link to={`${url}/review`}><Button variant="inherit">Review</Button></Link></div>
+     </Box>
+     }
       {admin && 
       <Box>
         <div><Link to={`${url}/manageOrder`}><Button variant="inherit">Manage Order</Button></Link></div>

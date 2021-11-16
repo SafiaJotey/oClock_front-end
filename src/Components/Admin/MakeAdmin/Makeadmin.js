@@ -16,7 +16,7 @@ const Makeadmin = () => {
         e.preventDefault();
         const user={email};
       
-      fetch('http://localhost:5000/admin',{
+      fetch('http://localhost:5000/users/admin',{
           method:'PUT',
           headers:{
               'content-type':'application/json'

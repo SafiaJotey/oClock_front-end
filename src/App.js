@@ -22,6 +22,7 @@ import Products from './Pages/Products/Products';
 import Payment from './Components/Payment/Payment';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import ManageProducts from './Components/ManageProducts/ManageProducts';
+import Register from './Pages/Register/Register';
 
 
 
@@ -90,7 +91,9 @@ function App() {
             <Login></Login>
             <Footer></Footer>
           </Route>
-
+          <Route path="/register">
+            <Register></Register>
+          </Route>
           {/* <PrivateRoute path="/ServiceDetails/:id">
             <ServiceDetails></ServiceDetails>
           </PrivateRoute>

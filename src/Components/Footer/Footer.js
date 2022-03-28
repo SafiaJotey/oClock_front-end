@@ -12,17 +12,17 @@ const Footer = () => {
           <div className="row">
             <div className="col-md-5">
               <div className="left-container text-center">
-                <h1>Dream Travel</h1>
+                <h1>oClock</h1>
                 
                 
                 <p className="mt-4 ">
                   <small>
-                 * provides a wide range of integrated travel and tourism services making it one of the leading travel agents in Jordan and neighboring countries. Our expertise, talent, hospitality, flexibility, and proficient are united in harmony to match your desires and fit all your travel and enjoyment needs. Our services are for individuals and groups, and for all budgets.
+                 *  offers the finest selection of genuine watches of internationally renowned brands with international guarantee cards.oClock is the only point of sale for distribution of authentic and genuine watch, along with after sales service.
                   </small>
                 </p>
 
                 <p className="mt-5">
-                  <small>DreamTravel © . All rights reserved.</small>
+                  <small>oClock ©copyright . All rights reserved.</small>
                 </p>
               </div>
             </div>

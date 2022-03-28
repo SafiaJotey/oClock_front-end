@@ -30,7 +30,7 @@ const Register = () => {
         <Container>
             <Grid container spacing={2}>
                 <Grid item sx={{ mt: 8 }} xs={12} md={6}>
-                    <Typography style={{ color:'#105652'}} variant="body1" gutterBottom>Register</Typography>
+                    <Typography style={{ color:'#000cb2'}} variant="body1" gutterBottom>Register</Typography>
                     {!isLoading && <form onSubmit={handleLoginSubmit}>
                         <TextField
                             sx={{ width: '75%', m: 1 }}
@@ -64,11 +64,11 @@ const Register = () => {
                             onBlur={handleOnBlur}
                             variant="standard" />
 
-                        <Button style={{ background:'#105652'}} sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Register</Button>
+                        <Button style={{  backgroundColor:'#000cb2',boxShadow: '2px 2px 5px  #b000b2,  -2px -2px 5px  #b000b2'}} sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Register</Button>
                         <NavLink
                             style={{ textDecoration: 'none' }}
                             to="/login">
-                            <Button style={{ color:'#105652'}} variant="text">Already Registered? Please Login</Button>
+                            <Button style={{ color:'#000cb2'}} variant="text">Already Registered? Please Login</Button>
                         </NavLink>
                     </form>}
                     {isLoading && <CircularProgress />}

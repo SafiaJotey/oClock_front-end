@@ -1,56 +1,63 @@
-.vision{
-    color: rgb(75, 73, 73);
-    margin: 100px auto;
+.vision {
+  color: rgb(75, 73, 73);
+  margin: 100px auto;
 }
 
-h2{
-    color:#105652;
-    font-size: 44px;
-    font-weight: 700;
-    margin: 50px 0;
-}
-h4{
-    color:#105652; 
-}
-.img{
-    border-radius: 20px;
-    border:2px solid #105652;
-    width: 100%;
-    max-height: 900px;
-    min-height: 300px;
-}
-.vision p{
-    font-size: 20px;
-    padding: 20px 0;
-}
-.card{
-    background-color: #d3fbdf;
- border-radius: 10px;
- margin: 10px 0;
+h2 {
+  color: #000cb2;
 
-
+  font-size: 44px;
+  font-weight: 700;
+  margin: 50px 0;
 }
-.card:hover{
-
-    border:2px solid #105652;
-    
-color: rgb(37, 37, 37) ;
-
-
-    
-   }
-.card h4{
-    font-weight: 700;
+h4 {
+  color: #ffffff;
 }
-.card p{
-    font-size: 16px;
+.img {
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px #000cb2;
+
+  margin-bottom: 8px;
 }
-.card a{
-  
-   
-   
-    color: white;
-    
-    font-size: 35px;
-    margin: 10px 0;
+.vision img {
+  width: 100%;
+}
+.vision p {
+  font-size: 16px;
+}
+.card {
+  border-radius: 10px;
+  margin: 10px 0;
+  font-weight: 700;
+  background-color: #f0f0f5;
+  border: 1px solid #000cb2;
+  color: rgb(24, 24, 24);
+}
+
+.card:hover {
+  border: 3px solid #000cb2;
+  background-color: #ffffff;
+}
+.card h4 {
+  color: #000cb2;
+}
+.card p {
+  font-size: 20px;
+}
+.card a {
+  color: white;
+
+  font-size: 35px;
+  margin: 10px 0;
+}
+.card button {
+  padding: 5px 10px;
+  background-color: #000cb2;
+  border: 2px solid #000cb2;
+  border-radius: 5px;
+  color: #ffffff;
+}
+.card button:hover {
+  background-color: white;
+  color: #000cb2;
 }

@@ -12,7 +12,7 @@ const AddReviews = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/review", {
+    fetch("https://morning-sea-41407.herokuapp.com/review", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

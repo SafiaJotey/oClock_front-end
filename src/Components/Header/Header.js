@@ -14,7 +14,7 @@ const Header = () => {
   
         <Navbar className="menu" collapseOnSelect expand="lg"  variant="dark" >
     <Container>
-    <Navbar.Brand as={Link} to="/home" className="logo" >Dream Travel</Navbar.Brand>
+    <Navbar.Brand as={Link} to="/home" className="logo" >oClock</Navbar.Brand>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
       <Nav className="ms-auto d-flex  align-items-center">

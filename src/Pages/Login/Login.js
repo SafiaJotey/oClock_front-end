@@ -31,7 +31,7 @@ const Login = () => {
         <Container>
             <Grid container spacing={2}>
                 <Grid item sx={{ mt: 8 }} xs={12} md={6}>
-                    <Typography variant="body1" gutterBottom style={{color:'#105652'}} >Login</Typography>
+                    <Typography variant="body1" gutterBottom style={{color:'#000cb2'}} >Login</Typography>
                     <form onSubmit={handleLoginSubmit}>
                         <TextField
                             sx={{ width: '75%', m: 1 }}
@@ -49,24 +49,26 @@ const Login = () => {
                             onChange={handleOnChange}
                             variant="standard" />
 
-                        <Button  style={{ background:'#105652'}}sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Login</Button>
+                        <Button  style={{ background:'#000cb2',boxShadow: '1px 1px 5px  #b000b2,  -1px -1px 5px  #b000b2'}}sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Login</Button>
                         <NavLink 
                             style={{ textDecoration: 'none' }}
                             to="/register">
-                            <Button  style={{ color:'#105652'}}variant="text">New User? Please Register</Button>
+                            <Button  style={{ color:'#000cb2'}}variant="text">New User? Please Register</Button>
                         </NavLink>
                         {isLoading && <CircularProgress />}
                         {user?.email && <Alert severity="success">Login successfully!</Alert>}
                         {authError && <Alert severity="error">{authError}</Alert>}
                     </form>
                     <p>------------------------</p>
-                    <Button  style={{ background:'#105652'}} onClick={handleGoogleSignIn} variant="contained">Google Sign In</Button>
+                    <Button  style={{ background:'#000cb2',boxShadow: '1px 1px 5px  #b000b2,  -1px -1px 5px  #b000b2'}} onClick={handleGoogleSignIn} variant="contained">Google Sign In</Button>
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <img style={{ width: '100%' }} src={login} alt="" />
                 </Grid>
             </Grid>
         </Container>
+
+
     );
 };
 

@@ -15,14 +15,14 @@ const ManageOrder = () => {
   };
   console.log(status);
   useEffect(() => {
-    fetch("http://localhost:5000/allOrders")
+    fetch("https://morning-sea-41407.herokuapp.com/allOrders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [control]);
 
     // const status = "apporved";
   const handleUpdate = (id) => {
-    fetch(`http://localhost:5000/updateStatus/${id}`, {
+    fetch(`https://morning-sea-41407.herokuapp.com/updateStatus/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ status }),
@@ -35,7 +35,7 @@ const ManageOrder = () => {
   const handleDelete = (id) => {
     const proceed=window.confirm("Are you Sure,you wan to delete?");
     if(proceed){
-      fetch(`http://localhost:5000/deleteOrder/${id}`, {
+      fetch(`https://morning-sea-41407.herokuapp.com/deleteOrder/${id}`, {
       method: "DELETE"
     })
       .then((res) => res.json())
@@ -85,10 +85,10 @@ const ManageOrder = () => {
                   defaultValue={order.status}
                 />
               </td>
-              <button onClick={() => handleDelete(order?._id)} className="btn bg-danger text-white p-2">Delete</button>
+              <button onClick={() => handleDelete(order?._id)} className="btnDelete text-white p-2">Delete</button>
               <button
                 onClick={() => handleUpdate(order._id)}
-                className="btn bg-success text-white p-2"
+                className="btnUpdate text-white p-2"
               >
                 Update
               </button>

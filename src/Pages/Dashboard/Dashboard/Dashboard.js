@@ -36,6 +36,7 @@ import ManageOrder from './../../../Components/ManageOrders/ManageOrder';
 
 import ManageProducts from './../../../Components/ManageProducts/ManageProducts';
 import Home from './../../Home/Home';
+import AddProducts from './../../../Components/AddProducts/AddProducts';
 
 
 const drawerWidth = 240;
@@ -56,24 +57,27 @@ function Dashboard(props) {
 
       
       <Divider />
-      <div><Link to={`${url}`}><Button variant="inherit">Dashboard</Button></Link></div>
+      <div><Link to={`${url}`}><Button style={{color:"#000cb2"}} variant="inherit">Dashboard</Button></Link></div>
      {!admin &&
      <Box>
-        <div><Link to={`${url}/myOrder`}><Button variant="inherit">MyOrder</Button></Link></div>
-     <div> <Link to={`${url}/payment`}><Button variant="inherit">Payment</Button></Link></div>
-      <div><Link to={`${url}/review`}><Button variant="inherit">Review</Button></Link></div>
+        <div><Link to={`${url}/myOrder`}><Button style={{color:"#000cb2"}} variant="inherit">MyOrder</Button></Link></div>
+     <div> <Link to={`${url}/payment`}><Button style={{color:"#000cb2"}} variant="inherit">Payment</Button></Link></div>
+      <div><Link to={`${url}/review`}><Button style={{color:"#000cb2"}} variant="inherit">Review</Button></Link></div>
+      
+      
      </Box>
      }
       {admin && 
       <Box>
-        <div><Link to={`${url}/manageOrder`}><Button variant="inherit">Manage Order</Button></Link></div>
-        <div><Link to={`${url}/manageProduct`}><Button variant="inherit">Manage Product</Button></Link></div>
-        <div><Link to={`${url}/makeadmin`}><Button variant="inherit">Make Admin</Button></Link></div>
+        <div><Link to={`${url}/manageOrder`}><Button style={{color:"#000cb2"}} variant="inherit">Manage Order</Button></Link></div>
+        <div><Link to={`${url}/manageProduct`}><Button style={{color:"#000cb2"}} variant="inherit">Manage Product</Button></Link></div>
+        <div><Link to={`${url}/makeadmin`}><Button style={{color:"#000cb2"}} variant="inherit">Make Admin</Button></Link></div>
+        <div><Link to={`${url}/addService`}><Button style={{color:"#000cb2"}} variant="inherit">Add new Product</Button></Link></div>
 
       </Box>
       }
-     <Link to='/home'><Button variant="inherit">Go to Home page</Button></Link>
-     <Button variant="inherit" onClick={logout}>Logout</Button>
+     <Link to='/home'><Button style={{color:"#000cb2"}} variant="inherit">Go to Home page</Button></Link>
+     <Button style={{color:"#000cb2"}} variant="inherit" onClick={logout}>Logout</Button>
      
       
      
@@ -92,7 +96,7 @@ function Dashboard(props) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar>
+        <Toolbar  style={{backgroundImage: 'linear-gradient(45deg,#b000b2,#000cb2,#b000b2)'}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -156,7 +160,7 @@ function Dashboard(props) {
           <AddReviews></AddReviews>
           
         </Route>
-        <Route path={`${path}/payment`}>
+        <Route path={`${path}/payment/:id`}>
           <Payment></Payment>
           
         </Route>
@@ -173,6 +177,15 @@ function Dashboard(props) {
         
         <Route path={`${path}/manageProduct`}>
           <ManageProducts></ManageProducts>
+          
+        </Route>
+         
+        <Route path={`${path}/manageProduct`}>
+          <ManageProducts></ManageProducts>
+          
+        </Route>
+        <Route path={`${path}/addService`}>
+          <AddProducts></AddProducts>
           
         </Route>
       </Switch>

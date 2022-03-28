@@ -31,4 +31,12 @@
 }
 button{
     margin:10px;
+   
+    color: white;
+    outline: none;
+    border: none;
+    padding: 10px 34px;
+    border-radius: 40px;
+    background-color:#000cb2 ;
+    box-shadow: 2px 2px 5px  #b000b2,  -2px -2px 5px  #b000b2;
 }

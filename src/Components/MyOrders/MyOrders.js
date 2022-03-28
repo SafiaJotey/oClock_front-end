@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import useAuth from '../Hooks/useAuth';
 import './MyOrders.css'
 
@@ -11,7 +12,7 @@ const MyOrders = () => {
   const [control, setControl] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myOrder/${user.email}`)
+    fetch(`https://morning-sea-41407.herokuapp.com/myOrder/${user.email}`)
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [control]);
@@ -19,7 +20,7 @@ const MyOrders = () => {
   const handleDelete = (id) => {
     const proceed=window.confirm("Are you Sure,you wan to delete?");
     if(proceed){
-      fetch(`http://localhost:5000/deleteOrder/${id}`, {
+      fetch(`https://morning-sea-41407.herokuapp.com/deleteOrder/${id}`, {
       method: "DELETE"
     })
       .then((res) => res.json())
@@ -53,6 +54,15 @@ const MyOrders = () => {
                 <p>UserName:{order?.Username}</p>
                 <p>Address:{order?.Address}</p>
                 <p className="text-danger">Status:{order?.status}</p>
+                {order.payment?"paid":
+                <Link to={`/dashboard/payment/${order._id}`}><button
+                  
+                className="btn"
+              >
+               pay
+              </button></Link>
+
+                }
                 <button
                   onClick={() => handleDelete(order?._id)}
                   className="btn"

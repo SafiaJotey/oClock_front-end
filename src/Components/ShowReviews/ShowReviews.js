@@ -9,18 +9,29 @@ const ShowReviews = () => {
     const {user}=useAuth();
     const [services, setServices] = useState([]);
     useEffect(() => {
-      fetch("http://localhost:5000/review")
+      fetch("https://morning-sea-41407.herokuapp.com/review")
         .then((res) => res.json())
         .then((data) => setServices(data));
     }, []);
   
     return (
+
+
+     
+
       <div className="p-3 country">
         <h2>What Customers say about us</h2>
         <div className="services">
+
+        
           <div className="row container mx-auto">
+
+          
             {services?.map((service) => (
-              <div className="col-md-4">
+
+
+
+              <div className="col-md-3">
                 <div className="review-card border border my-2 p-3">
                   
   

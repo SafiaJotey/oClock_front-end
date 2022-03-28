@@ -14,14 +14,15 @@
     border-radius: 20px;
     color:#D8DFE9 ;
     font-size: 30px;
-    background-color: #105652;
-    border-bottom: 5px solid #D8DFE9;
+    background-color: #000cb2;
+    border-bottom: 5px solid #b000b2;
     
 }
 .social a:hover{
    background-color: transparent;
    
-   color: white;
+   color:#b000b2;
+   border-color:#b000b2 ;
 
 
 }

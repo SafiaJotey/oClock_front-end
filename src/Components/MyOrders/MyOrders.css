@@ -1,10 +1,10 @@
 .order{
-    color: #105652;
+    color: #000cb2;
     margin:50px 0;
 }
 .services.btn{
-    background-color: #105652;
-    color: white;
+    background-color: #000cb2;
+    color: rgb(245, 245, 245);
     outline: none;
     border: none;
     padding: 2% 20%;

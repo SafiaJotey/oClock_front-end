@@ -6,7 +6,7 @@ const ManageProducts= () => {
   const [services, setServices] = useState([]);
   const [control, setControl] = useState(false);
   useEffect(() => {
-    fetch("http://localhost:5000/allServices")
+    fetch("https://morning-sea-41407.herokuapp.com/allServices")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [control]);
@@ -14,7 +14,7 @@ const ManageProducts= () => {
   const handleDelete = (id) => {
     const proceed=window.confirm("Are you Sure,you wan to delete?");
     if(proceed){
-      fetch(`http://localhost:5000/deleteProduct/${id}`, {
+      fetch(`https://morning-sea-41407.herokuapp.com/deleteProduct/${id}`, {
       method: "DELETE"
     })
       .then((res) => res.json())

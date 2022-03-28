@@ -7,8 +7,6 @@ import Social from '../../Components/Social/Social';
 import Footer from './../../Components/Footer/Footer';
 import Header from './../../Components/Header/Header';
 
-// import CarouselBanner from '../../Components/CarouselBanner/CarouselBanner';
-
 const Home = () => {
   return (
     <div>

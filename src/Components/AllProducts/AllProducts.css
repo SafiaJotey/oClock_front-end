@@ -3,7 +3,7 @@
   background-color: #e7e9fa !important;
 }
 .country h2 {
-  color: #000cb2 !important;
+  color: #000b19 !important;
   font-weight: 700;
 }
 
@@ -14,7 +14,7 @@
   color: black !important;
 }
 .service-card h6 {
-  color: #000cb2 !important;
+  color: #000b19 !important;
   font-weight: 700;
   font-size: 32px;
   margin: 10px 0;
@@ -27,5 +27,5 @@
 .service-card .btn {
   padding: 10px 34px;
   border-radius: 5px !important;
-  background-color: #000cb2 !important;
+  background-color: #000b19 !important;
 }

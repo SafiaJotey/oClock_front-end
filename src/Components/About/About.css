@@ -4,7 +4,7 @@
 }
 
 h2 {
-  color: #000cb2;
+  color: #000b19;
 
   font-size: 44px;
   font-weight: 700;
@@ -15,7 +15,7 @@ h4 {
 }
 .img {
   border-radius: 20px;
-  box-shadow: 2px 2px 2px #000cb2;
+  box-shadow: 2px 2px 2px #000b19;
 
   margin-bottom: 8px;
 }
@@ -30,16 +30,16 @@ h4 {
   margin: 10px 0;
   font-weight: 700;
   background-color: #f0f0f5;
-  border: 1px solid #000cb2;
+  border: 1px solid #000b19;
   color: rgb(24, 24, 24);
 }
 
 .card:hover {
-  border: 3px solid #000cb2;
+  border: 3px solid #000b19;
   background-color: #ffffff;
 }
 .card h4 {
-  color: #000cb2;
+  color: #000b19;
 }
 .card p {
   font-size: 20px;
@@ -52,12 +52,12 @@ h4 {
 }
 .card button {
   padding: 5px 10px;
-  background-color: #000cb2;
-  border: 2px solid #000cb2;
+  background-color: #000b19;
+  border: 2px solid #000b19;
   border-radius: 5px;
   color: #ffffff;
 }
 .card button:hover {
   background-color: white;
-  color: #000cb2;
+  color: #000b19;
 }

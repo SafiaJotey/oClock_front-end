@@ -10,12 +10,12 @@ const About = () => {
     <div className="container vision my-5">
       <h2>Best Selling Products</h2>
       <p>
-        OCLOCK is a very reputed and popular name for world class watches and
-        writing instruments in Bangladesh. There are 49 OCLOCK strategically
-        located at the entrances of key shopping malls and 5-star hotels. OCLOCK
-        maintains an international standard interior, with uniform looking point
-        of sales with an elegant outlook and ambience. It is operated by trained
-        sales & customer care officers.
+        OCLOCK is a very reputed and popular name for world class watches and in
+        Bangladesh. There are OCLOCK maintains an international standard
+        interior, with uniform looking point of sales with an elegant outlook
+        and ambience. It is operated by trained sales & customer care
+        officers.oClock offers the finest selection of genuine watches of
+        internationally renowned brands with international guarantee cards.
       </p>
       <div className="row text-center d-flex flex-column d-md-flex flex-md-row justify-content-center align-items-center  ">
         <div className="col-md-10">
@@ -33,7 +33,7 @@ const About = () => {
             </a>
             <div className="my-5 my-md-2">
               <h4>Garmin </h4>
-              <p> Barcode : 7031839.Dial </p>
+              <p> Barcode : 6031839.Dial </p>
               <p> Color : GRAY/GUN.</p>
               <button>Order Now</button>
               <br />
@@ -47,7 +47,7 @@ const About = () => {
               <img src={bs3}></img>
             </a>
             <div className="my-5 my-md-2">
-              <h4>Garmin </h4>
+              <h4>Piaget </h4>
               <p> Barcode : 7031839.Dial </p>
               <p> Color : GRAY/GUN.</p>
               <button>Order Now</button>
@@ -62,8 +62,8 @@ const About = () => {
               <img src={bs5}></img>
             </a>
             <div className="my-5 my-md-2">
-              <h4>Garmin </h4>
-              <p> Barcode : 7031839.Dial </p>
+              <h4>Cartier </h4>
+              <p> Barcode : 9031839.Dial </p>
               <p> Color : GRAY/GUN.</p>
               <button>Order Now</button>
               <br />

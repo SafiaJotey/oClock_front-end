@@ -1,32 +1,23 @@
-
-.connected{
-    padding-top: 50px;
+.connected {
+  padding-top: 50px;
 }
- .social{
-    display: flex;
-    justify-content: space-around;
-    padding-top: 50px;
-    
+.social {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 50px;
 }
-.social a{
-    padding: 20px 30px;
-    border: 2px solid #D8DFE9;
-    border-radius: 20px;
-    color:#D8DFE9 ;
-    font-size: 30px;
-    background-color: #000cb2;
-    border-bottom: 5px solid #b000b2;
-    
+.social a {
+  padding: 20px 30px;
+  border: 2px solid #d8dfe9;
+  border-radius: 20px;
+  color: #d8dfe9;
+  font-size: 30px;
+  background-color: #000b19;
+  border-bottom: 5px solid #b000b2;
 }
-.social a:hover{
-   background-color: transparent;
-   
-   color:#b000b2;
-   border-color:#b000b2 ;
+.social a:hover {
+  background-color: transparent;
 
-
-}
-
-.connected{
-    margin: 100px auto;
+  color: #b000b2;
+  border-color: #b000b2;
 }

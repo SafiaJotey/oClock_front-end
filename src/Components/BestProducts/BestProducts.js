@@ -10,7 +10,7 @@ const BestProducts = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
-  const bestProducts = products.slice(0, 6);
+  const bestProducts = products.slice(0, 3);
   return (
     <div className="p-3 country">
       <h2>Our Products</h2>

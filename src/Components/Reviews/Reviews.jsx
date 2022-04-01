@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import useAuth from '../Hooks/useAuth';
-import Review from './Review/Review';
+import Review from '../ShowReviews/Review';
 
 const Reviews = () => {
   const { user } = useAuth();

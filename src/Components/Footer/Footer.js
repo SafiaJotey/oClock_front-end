@@ -1,8 +1,6 @@
-import React from "react";
-import "./Footer.css";
-
-
-
+import React from 'react';
+import logo from '../../Images/logo.png';
+import './Footer.css';
 
 const Footer = () => {
   return (
@@ -12,12 +10,16 @@ const Footer = () => {
           <div className="row">
             <div className="col-md-5">
               <div className="left-container text-center">
-                <h1>oClock</h1>
-                
-                
+                <div>
+                  <img src={logo} alt="" />
+                </div>
+
                 <p className="mt-4 ">
                   <small>
-                 *  offers the finest selection of genuine watches of internationally renowned brands with international guarantee cards.oClock is the only point of sale for distribution of authentic and genuine watch, along with after sales service.
+                    * offers the finest selection of genuine watches of
+                    internationally renowned brands with international guarantee
+                    cards.oClock is the only point of sale for distribution of
+                    authentic and genuine watch, along with after sales service.
                   </small>
                 </p>
 
@@ -33,7 +35,6 @@ const Footer = () => {
                   <li className="footer-menu">About</li>
                   <li className="footer-menu">Contact </li>
                   <li className="footer-menu">Blogs </li>
-                 
                 </ul>
               </div>
             </div>
@@ -45,13 +46,12 @@ const Footer = () => {
                   type="text"
                   placeholder="Enter  your Email"
                 />
-                
+
                 <div className="map d-flex align-items-center justify-content-center">
-                  
                   <div>
                     <p>
-                    Holding No. 100 (1st Floor), Bir Uttam A K Khandaker Road,
-                      <br />  Mohakhali C/A, Dhaka-1212.
+                      Holding No. 100 (1st Floor), Bir Uttam A K Khandaker Road,
+                      <br /> Mohakhali C/A, Dhaka-1212.
                     </p>
                   </div>
                 </div>

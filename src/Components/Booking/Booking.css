@@ -3,18 +3,18 @@
   height: 400px;
 }
 .booking h1 {
-  color: #000cb2;
+  color: #000b19;
   font-size: 40px;
   font-weight: 700;
   margin: 50px;
 }
 .booking p {
-  color: #000cb2;
+  color: #2e2e2e;
   font-size: 20px;
 }
 
 .booking .btn {
-  background-color: #000cb2;
+  background-color: #000b19;
   color: white;
   outline: none;
   border: none;

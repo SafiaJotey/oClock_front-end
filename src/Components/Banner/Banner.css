@@ -31,3 +31,8 @@
   border-radius: 40px;
   box-shadow: 2px 2px 5px #b000b2, -2px -2px 5px #b000b2;
 }
+.about-btn:hover {
+  box-shadow: none;
+  background-color: #af00b21e;
+  border: 1px solid #b000b2;
+}

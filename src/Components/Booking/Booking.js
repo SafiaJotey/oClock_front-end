@@ -21,6 +21,7 @@ const Booking = () => {
     handleSubmit,
     watch,
     formState: { errors },
+    trigger,
   } = useForm();
 
   const onSubmit = (data) => {
@@ -96,26 +97,43 @@ const Booking = () => {
 
                 {service?.image && (
                   <input
+                    className="d-none "
                     {...register('image')}
                     defaultValue={service?.image}
-                    className="p-2 m-2 w-100"
                   />
                 )}
 
                 <input
-                  {...register('Address')}
+                  {...register('Address', { required: true })}
                   placeholder="Enter your proper Address to confirm the order"
                   className="p-2 m-2 w-100"
                 />
+                {errors.Address && (
+                  <span className="text-danger">This field is required</span>
+                )}
                 <br />
                 <input
-                  {...register('Mobile')}
+                  {...register('Mobile', {
+                    required: true,
+                    pattern: {
+                      value: /^[0-9]*$/,
+                      message: 'Only numbers are allowed',
+                    },
+                  })}
+                  onKeyUp={() => {
+                    trigger('Mobile');
+                  }}
                   placeholder="Enter your Contact Number"
                   className="p-2 m-2 w-100"
                 />
-                <br />
+                {errors.Mobile && (
+                  <small className="text-danger">{errors.Mobile.message}</small>
+                )}
+                {errors.Address && (
+                  <span className="text-danger">This field is required</span>
+                )}
 
-                {errors.exampleRequired && <span>This field is required</span>}
+                <br />
 
                 <input type="submit" value="Place Order" className="btn " />
               </form>

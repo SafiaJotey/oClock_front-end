@@ -35,8 +35,8 @@ const AboutUs = () => {
       </div>
       <div className="col-md-5 p-3 d-flex flex-column justify-center mt-5">
         <h4>About us</h4>
-        <h2>A Unique watch that fits Your Style</h2>
-        <p className="aboutUs">
+        <h2>A Unique Watch That Fits Your Style</h2>
+        <p className="aboutUs px-3">
           The new Best collection is already here! This quartz Lawson Franklin
           38 model, designed with simplicity and elegance, is truly a cherry on
           the cake. Comes in different sizes and band colors, has a stainless

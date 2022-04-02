@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
+import swal from 'sweetalert';
 import useAuth from './../Hooks/useAuth';
 import './Booking.css';
 
@@ -26,17 +27,28 @@ const Booking = () => {
 
   const onSubmit = (data) => {
     data.status = 'pending';
+    swal({
+      title: ' Do you want to order this watch?',
+      icon: 'warning',
 
-    fetch('https://morning-sea-41407.herokuapp.com/confirmOrder', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-        alert('Order confirmed');
-      });
+      buttons: true,
+    }).then((willConfirm) => {
+      if (willConfirm) {
+        swal('Done.This item is added to your order list.', {
+          icon: 'success',
+        });
+        fetch('https://morning-sea-41407.herokuapp.com/confirmOrder', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(data),
+        })
+          .then((res) => res.json())
+          .then((result) => {
+            console.log(result);
+          });
+      }
+    });
+
     console.log(data);
   };
 

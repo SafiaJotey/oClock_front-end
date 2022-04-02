@@ -1,0 +1,20 @@
+.aboutUs {
+  background: #e7e9fa;
+  margin: 100px 0;
+}
+.aboutUs h2 {
+  margin: 0 0 0px 0;
+  color: #000b19;
+}
+.aboutUs h4 {
+  color: black;
+}
+.aboutUs p {
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-align: justify;
+  margin-top: 10px;
+}
+.aboutUs img {
+  border-radius: 10px;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import About from '../../Components/About/About';
+import AboutUs from '../../Components/AboutUs/AboutUs';
 import Banner from '../../Components/Banner/Banner';
 import BestProducts from '../../Components/BestProducts/BestProducts';
 import ShowReviews from '../../Components/ShowReviews/ShowReviews';
@@ -13,6 +14,7 @@ const Home = () => {
       <Header></Header>
       <Banner></Banner>
       <About></About>
+      <AboutUs></AboutUs>
       <BestProducts />
 
       <ShowReviews></ShowReviews>

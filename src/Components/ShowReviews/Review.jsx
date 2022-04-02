@@ -5,7 +5,7 @@ import './Review.css';
 const Review = ({ review }) => {
   console.log(review);
   return (
-    <div className="md:pb-12">
+    <div className="md:pb-12 review">
       <div className="review-card  ">
         <h6>{review?.name}</h6>
 

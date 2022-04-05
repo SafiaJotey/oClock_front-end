@@ -1,13 +1,13 @@
 .manage h1 {
   color: #000b19;
-  margin: 50px;
+  margin: 50px 0;
 }
 .btnDelete {
   background-color: #b000b2 !important;
-  margin-right: 5px;
+
   border-radius: 5px;
 }
 .btnUpdate {
   background-color: #000b19 !important;
-  border-radius: 10px;
+  border-radius: 5px;
 }

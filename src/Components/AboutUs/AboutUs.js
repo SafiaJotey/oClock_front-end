@@ -22,7 +22,7 @@ const AboutUs = () => {
                   alt=""
                 />
               </div>
-              <div className=" mt-2 col-md-12">
+              <div className=" mt-3 col-md-12">
                 <img
                   className="w-100 "
                   src="https://cdn.shopify.com/s/files/1/0564/2705/3216/files/img-3.jpg?v=1633499021"

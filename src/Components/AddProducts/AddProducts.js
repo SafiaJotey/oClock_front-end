@@ -13,7 +13,7 @@ const AddProducts = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch('https://morning-sea-41407.herokuapp.com/addServices', {
+    fetch(' https://sheltered-anchorage-82357.herokuapp.com/addServices', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(data),
@@ -35,6 +35,7 @@ const AddProducts = () => {
                   placeholder="Name"
                   className="p-2 m-2 w-100"
                 />
+
                 <br />
                 {/* <input
                   {...register("date")}
@@ -46,6 +47,12 @@ const AddProducts = () => {
                 <input
                   {...register('Description')}
                   placeholder="Description"
+                  className="p-2 m-2 w-100"
+                />
+                <br />
+                <input
+                  {...register('Barcode')}
+                  placeholder="Barcode"
                   className="p-2 m-2 w-100"
                 />
                 <br />

@@ -11,8 +11,10 @@
   min-height: 200px;
 
   border-top-left-radius: 20px;
-  border-right: 4px solid;
-  border-image: linear-gradient(180deg, #b000b2, #000b19);
+  border-right: 3px solid;
+  border-bottom: 3px solid;
+  /* border-image: linear-gradient(180deg, #b000b2, #000b19); */
+  border-image: linear-gradient(180deg, #e7e9fa, #c9cefd);
   border-image-slice: 1;
 }
 

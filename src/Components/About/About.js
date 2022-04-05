@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import bs1 from '../../Images/about.jpg';
-import bs2 from '../../Images/bs2.jpg';
-import bs3 from '../../Images/bs3.jpg';
-import bs5 from '../../Images/bs5.jpg';
 import './About.css';
 
 const About = () => {
+  const [services, setServices] = useState([]);
+  useEffect(() => {
+    fetch(' https://sheltered-anchorage-82357.herokuapp.com/getBestProducts')
+      .then((res) => res.json())
+      .then((data) => setServices(data));
+  }, []);
+  console.log(services);
   return (
     <div className="container vision my-5">
       <h2>Best Selling Products</h2>
@@ -26,51 +31,23 @@ const About = () => {
       </div>
 
       <div className="row text-center d-flex flex-column d-md-flex flex-md-row justify-content-center align-items-center  ">
-        <div className="col-md-4">
-          <div className="row  card card-similar1">
-            <a href="#">
-              <img src={bs2}></img>
-            </a>
-            <div className="my-5 my-md-2">
-              <h4>Garmin </h4>
-              <p> Barcode : 6031839.Dial </p>
-              <p> Color : GRAY/GUN.</p>
-              <button>Order Now</button>
-              <br />
-              <small>In Stock : Available </small>
+        {services?.map((product) => (
+          <div className="col-md-4">
+            <div className="row  card card-similar1">
+              <img className="mt-1" src={product.image} alt="watch"></img>
+
+              <div className="my-5 my-md-2">
+                <h4>{product.ModelName}</h4>
+                <p> Barcode: {product.Barcode} </p>
+                <Link to={`/booking/${product._id}`}>
+                  <button className="btn ">Order Now</button>
+                </Link>
+                <br />
+                <small>In Stock : Available </small>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="col-md-4">
-          <div className="row  card card-dissimilar">
-            <a href="">
-              <img src={bs3}></img>
-            </a>
-            <div className="my-5 my-md-2">
-              <h4>Piaget </h4>
-              <p> Barcode : 7031839.Dial </p>
-              <p> Color : GRAY/GUN.</p>
-              <button>Order Now</button>
-              <br />
-              <small>In Stock : Available </small>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4">
-          <div className="row  card card-similar2">
-            <a href="">
-              <img src={bs5}></img>
-            </a>
-            <div className="my-5 my-md-2">
-              <h4>Cartier </h4>
-              <p> Barcode : 9031839.Dial </p>
-              <p> Color : GRAY/GUN.</p>
-              <button>Order Now</button>
-              <br />
-              <small>In Stock : Available </small>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

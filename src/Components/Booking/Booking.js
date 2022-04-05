@@ -11,7 +11,9 @@ const Booking = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    fetch(`https://morning-sea-41407.herokuapp.com/singleProduct/${serviceId}`)
+    fetch(
+      ` https://sheltered-anchorage-82357.herokuapp.com/singleProduct/${serviceId}`
+    )
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);
@@ -37,7 +39,7 @@ const Booking = () => {
         swal('Done.This item is added to your order list.', {
           icon: 'success',
         });
-        fetch('https://morning-sea-41407.herokuapp.com/confirmOrder', {
+        fetch(' https://sheltered-anchorage-82357.herokuapp.com/confirmOrder', {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
           body: JSON.stringify(data),

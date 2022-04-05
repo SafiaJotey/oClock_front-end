@@ -6,7 +6,7 @@ const BestProducts = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('https://morning-sea-41407.herokuapp.com/allServices')
+    fetch(' https://sheltered-anchorage-82357.herokuapp.com/allServices')
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

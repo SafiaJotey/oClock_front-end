@@ -5,7 +5,7 @@ import './AllProducts.css';
 const AllProducts = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch('https://morning-sea-41407.herokuapp.com/allServices')
+    fetch(' https://sheltered-anchorage-82357.herokuapp.com/allServices')
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

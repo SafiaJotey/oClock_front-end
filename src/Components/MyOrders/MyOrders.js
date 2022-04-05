@@ -1,41 +1,45 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import useAuth from '../Hooks/useAuth';
-import './MyOrders.css'
+import './MyOrders.css';
 
 const MyOrders = () => {
-    const {user}=useAuth();
-    
-   
+  const { user } = useAuth();
+
   const [services, setServices] = useState([]);
 
   const [control, setControl] = useState(false);
 
   useEffect(() => {
-    fetch(`https://morning-sea-41407.herokuapp.com/myOrder/${user.email}`)
+    fetch(
+      ` https://sheltered-anchorage-82357.herokuapp.com/myOrder/${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [control]);
 
   const handleDelete = (id) => {
-    const proceed=window.confirm("Are you Sure,you wan to delete?");
-    if(proceed){
-      fetch(`https://morning-sea-41407.herokuapp.com/deleteOrder/${id}`, {
-      method: "DELETE"
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount) {
-          setControl(!control);
-          alert("deleted Successfully");
+    const proceed = window.confirm('Are you Sure,you wan to delete?');
+    if (proceed) {
+      fetch(
+        ` https://sheltered-anchorage-82357.herokuapp.com/deleteOrder/${id}`,
+        {
+          method: 'DELETE',
         }
-      });
-    console.log(id);
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount) {
+            setControl(!control);
+            alert('deleted Successfully');
+          }
+        });
+      console.log(id);
     }
   };
 
   return (
-    <div >
+    <div>
       <h1 className="order">My orders of {user.displayName} </h1>
 
       <div className="services">
@@ -46,23 +50,20 @@ const MyOrders = () => {
                 <div className="services-img ">
                   <img className="w-100" src={order?.image} alt="" />
                 </div>
-               
+
                 <h6>Place:{order?.name}</h6>
-                
-                
+
                 <h5 className="text-danger"> Cost :{order?.price}$</h5>
                 <p>UserName:{order?.Username}</p>
                 <p>Address:{order?.Address}</p>
                 <p className="text-danger">Status:{order?.status}</p>
-                {order.payment?"paid":
-                <Link to={`/dashboard/payment/${order._id}`}><button
-                  
-                className="btn"
-              >
-               pay
-              </button></Link>
-
-                }
+                {order.payment ? (
+                  'paid'
+                ) : (
+                  <Link to={`/dashboard/payment/${order._id}`}>
+                    <button className="btn">pay</button>
+                  </Link>
+                )}
                 <button
                   onClick={() => handleDelete(order?._id)}
                   className="btn"

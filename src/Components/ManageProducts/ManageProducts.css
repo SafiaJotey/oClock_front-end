@@ -1,33 +1,29 @@
-.service-card{
-    background-color: #d3fbdf;
-    border-radius: 20px;
-    min-height: 700px;
+.service-card {
+  background-color: #d3fbdf;
+  border-radius: 20px;
+  min-height: 700px;
 }
-.country h2{
-    color:#105652;
-    font-weight: 700;
-}
-
-.service-card h6{
-    color:#105652;
-    font-weight: 700;
-    font-size: 28px;
-    margin: 10px 0;
+.country h2 {
+  color: #105652;
+  font-weight: 700;
 }
 
-.service-card p{
-   
-    font-size: 18px;
+.service-card h6 {
+  color: #105652;
+  font-weight: 700;
+  font-size: 28px;
+  margin: 10px 0;
 }
 
-.service-card .btn{
-    background-color:  #105652;
-    color: white;
-    outline: none;
-    border: none;
-    padding: 10px 34px;
-    border-radius: 40px;
-
+.service-card p {
+  font-size: 18px;
 }
 
-
+.service-card .btn {
+  background-color: #105652;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 10px 34px;
+  border-radius: 40px;
+}

@@ -11,9 +11,7 @@ const MyOrders = () => {
   const [control, setControl] = useState(false);
 
   useEffect(() => {
-    fetch(
-      ` https://sheltered-anchorage-82357.herokuapp.com/myOrder/${user.email}`
-    )
+    fetch(` https://oclock.onrender.com/myOrder/${user.email}`)
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [control]);
@@ -21,12 +19,9 @@ const MyOrders = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm('Are you Sure,you wan to delete?');
     if (proceed) {
-      fetch(
-        ` https://sheltered-anchorage-82357.herokuapp.com/deleteOrder/${id}`,
-        {
-          method: 'DELETE',
-        }
-      )
+      fetch(` https://oclock.onrender.com/deleteOrder/${id}`, {
+        method: 'DELETE',
+      })
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount) {

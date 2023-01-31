@@ -11,9 +11,7 @@ const Booking = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    fetch(
-      ` https://sheltered-anchorage-82357.herokuapp.com/singleProduct/${serviceId}`
-    )
+    fetch(` https://oclock.onrender.com/singleProduct/${serviceId}`)
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);
@@ -39,7 +37,7 @@ const Booking = () => {
         swal('Done.This item is added to your order list.', {
           icon: 'success',
         });
-        fetch(' https://sheltered-anchorage-82357.herokuapp.com/confirmOrder', {
+        fetch(' https://oclock.onrender.com/confirmOrder', {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
           body: JSON.stringify(data),

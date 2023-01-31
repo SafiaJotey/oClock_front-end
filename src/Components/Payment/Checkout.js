@@ -1,5 +1,5 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Checkout = ({ order }) => {
   const { price } = order;
@@ -8,16 +8,13 @@ const Checkout = ({ order }) => {
   const [error, setError] = useState('');
   const [clientSecret, setClientSecret] = useState('');
   useEffect(() => {
-    fetch(
-      ' https://sheltered-anchorage-82357.herokuapp.com/create-payment-intent',
-      {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify({ price }),
-      }
-    )
+    fetch(' https://oclock.onrender.com/create-payment-intent', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({ price }),
+    })
       .then((res) => res.json())
       .then((data) => console.log(data));
   }, [price]);

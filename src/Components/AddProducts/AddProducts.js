@@ -13,7 +13,7 @@ const AddProducts = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch(' https://sheltered-anchorage-82357.herokuapp.com/addServices', {
+    fetch(' https://oclock.onrender.com/addServices', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(data),

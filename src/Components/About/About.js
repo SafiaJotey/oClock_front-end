@@ -6,7 +6,7 @@ import './About.css';
 const About = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch(' https://sheltered-anchorage-82357.herokuapp.com/getBestProducts')
+    fetch(' https://oclock.onrender.com/getBestProducts')
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

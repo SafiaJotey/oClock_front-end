@@ -10,7 +10,7 @@ const Payment = () => {
   const { id } = useParams();
   const [order, setOrder] = useState({});
   useEffect(() => {
-    fetch(` https://sheltered-anchorage-82357.herokuapp.com/allServices/${id}`)
+    fetch(` https://oclock.onrender.com/allServices/${id}`)
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, [id]);

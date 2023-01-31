@@ -16,7 +16,7 @@ const ShowReviews = () => {
   const { user } = useAuth();
   const [reviews, setRervices] = useState([]);
   useEffect(() => {
-    fetch(' https://sheltered-anchorage-82357.herokuapp.com/review')
+    fetch(' https://oclock.onrender.com/review')
       .then((res) => res.json())
       .then((data) => setRervices(data));
   }, []);

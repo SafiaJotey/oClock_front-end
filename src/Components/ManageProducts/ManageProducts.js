@@ -8,7 +8,7 @@ const ManageProducts = () => {
   const [control, setControl] = useState(false);
   const size = 30;
   useEffect(() => {
-    fetch(' https://sheltered-anchorage-82357.herokuapp.com/allServices')
+    fetch(' https://oclock.onrender.com/allServices')
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [control]);
@@ -16,12 +16,9 @@ const ManageProducts = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm('Are you Sure,you wan to delete?');
     if (proceed) {
-      fetch(
-        ` https://sheltered-anchorage-82357.herokuapp.com/deleteProduct/${id}`,
-        {
-          method: 'DELETE',
-        }
-      )
+      fetch(` https://oclock.onrender.com/deleteProduct/${id}`, {
+        method: 'DELETE',
+      })
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount) {
@@ -44,14 +41,11 @@ const ManageProducts = () => {
         swal('Done.This item is added to best selling products list.', {
           icon: 'success',
         });
-        fetch(
-          ' https://sheltered-anchorage-82357.herokuapp.com/addBestProducts',
-          {
-            method: 'POST',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(data),
-          }
-        )
+        fetch(' https://oclock.onrender.com/addBestProducts', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(data),
+        })
           .then((res) => res.json())
           .then((result) => {
             console.log(result);

@@ -14,21 +14,18 @@ const ManageOrder = () => {
   };
   console.log(status);
   useEffect(() => {
-    fetch(' https://sheltered-anchorage-82357.herokuapp.com/allOrders')
+    fetch(' https://oclock.onrender.com/allOrders')
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [control]);
 
   // const status = "apporved";
   const handleUpdate = (id) => {
-    fetch(
-      ` https://sheltered-anchorage-82357.herokuapp.com/updateStatus/${id}`,
-      {
-        method: 'PUT',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ status }),
-      }
-    );
+    fetch(` https://oclock.onrender.com/updateStatus/${id}`, {
+      method: 'PUT',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ status }),
+    });
 
     console.log(id);
   };
@@ -37,12 +34,9 @@ const ManageOrder = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm('Are you Sure,you wan to delete?');
     if (proceed) {
-      fetch(
-        ` https://sheltered-anchorage-82357.herokuapp.com/deleteOrder/${id}`,
-        {
-          method: 'DELETE',
-        }
-      )
+      fetch(` https://oclock.onrender.com/deleteOrder/${id}`, {
+        method: 'DELETE',
+      })
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount) {
